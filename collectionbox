@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request a Collection Box | Moosa Trust UK</title>
+  <meta name="description" content="Request a Moosa Trust UK collection box for your home, workplace or community. A trustee will be in touch to arrange delivery."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231B4332'/%3E%3Cpath fill='%23D4A574' d='M50 18l5.5 17h17.9l-14.5 10.5 5.5 17-14.4-10.5-14.4 10.5 5.5-17-14.5-10.5h17.9z'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --deep:    #060f09;
+      --forest:  #0a1f12;
+      --green:   #163321;
+      --emerald: #2d6a4f;
+      --mint:    #52b788;
+      --gold:    #c9943a;
+      --gold-lt: #e8b86d;
+      --muted:   rgba(255,255,255,.65);
+      --glass:   rgba(255,255,255,.06);
+      --gborder: rgba(255,255,255,.10);
+    }
+
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:var(--deep);
+      color:#fff;
+      min-height:100vh;
+      -webkit-font-smoothing:antialiased;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* ── BG ── */
+    .page-bg{
+      position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(45,106,79,.5) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 90% 90%, rgba(201,148,58,.12) 0%, transparent 55%),
+        linear-gradient(180deg,var(--forest) 0%,var(--deep) 100%)
+    }
+    .bg-ring{position:fixed;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(201,148,58,.07);pointer-events:none;animation:ring 8s ease-in-out infinite}
+    .bg-ring:nth-child(1){width:500px;height:500px}
+    .bg-ring:nth-child(2){width:800px;height:800px;animation-delay:2.5s;border-color:rgba(82,183,136,.05)}
+    @keyframes ring{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.03)}}
+
+    /* ── NAV ── */
+    nav{
+      position:relative;z-index:10;
+      padding:1.2rem 2rem;
+      display:flex;align-items:center;justify-content:space-between;
+      border-bottom:1px solid var(--gborder);
+      background:rgba(6,15,9,.6);backdrop-filter:blur(20px);
+    }
+    .logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:white}
+    .logo-icon{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--emerald),var(--gold));display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+    .logo-text{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;line-height:1.2}
+    .logo-text span{display:block;font-size:.6rem;font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-lt)}
+    .nav-back{font-size:.82rem;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+    .nav-back:hover{color:white}
+
+    /* ── MAIN ── */
+    main{
+      position:relative;z-index:1;
+      flex:1;
+      display:flex;align-items:flex-start;justify-content:center;
+      padding:4rem 1.5rem 5rem;
+    }
+    .page-wrap{width:100%;max-width:680px}
+
+    /* ── HEADER ── */
+    .page-hdr{text-align:center;margin-bottom:3rem}
+    .label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:.9rem}
+    .page-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.1rem}
+    .page-title em{font-style:italic;color:var(--gold-lt)}
+    .page-sub{color:var(--muted);font-size:.98rem;line-height:1.8;max-width:520px;margin:0 auto}
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works{
+      display:flex;gap:0;margin-bottom:2.8rem;
+      background:rgba(255,255,255,.04);border:1px solid var(--gborder);border-radius:18px;overflow:hidden;
+    }
+    .hw-step{padding:1.4rem 1.5rem;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;border-right:1px solid var(--gborder)}
+    .hw-step:last-child{border-right:none}
+    .hw-num{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--emerald),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+    .hw-label{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+    /* ── FORM CARD ── */
+    .form-card{
+      background:rgba(255,255,255,.05);border:1px solid var(--gborder);
+      border-radius:24px;backdrop-filter:blur(16px);padding:2.5rem;
+    }
+    .form-card h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid var(--gborder)}
+
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .fg{margin-bottom:1.1rem}
+    .fg label{display:block;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
+    .fg input,.fg textarea,.fg select{
+      width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);
+      border-radius:10px;padding:.85rem 1rem;color:white;
+      font-family:'DM Sans',sans-serif;font-size:.92rem;outline:none;
+      transition:border-color .2s,background .2s;-webkit-appearance:none;appearance:none
+    }
+    .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.28)}
+    .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:rgba(201,148,58,.5);background:rgba(255,255,255,.09)}
+    .fg textarea{min-height:90px;resize:vertical}
+    .fg select option{background:#0a1f12;color:white}
+
+    .notice{background:rgba(201,148,58,.08);border:1px solid rgba(201,148,58,.25);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.4rem;font-size:.84rem;color:rgba(255,255,255,.75);line-height:1.65}
+    .notice strong{color:var(--gold-lt)}
+
+    .f-submit{
+      width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-lt));
+      color:var(--deep);border:none;border-radius:12px;padding:1.05rem;
+      font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;
+      cursor:pointer;transition:all .25s;margin-top:.4rem
+    }
+    .f-submit:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(201,148,58,.3)}
+    .f-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+    /* ── SUCCESS ── */
+    .success{display:none;text-align:center;padding:3rem 1rem}
+    .success-icon{font-size:3.5rem;margin-bottom:1.2rem}
+    .success h2{font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:.8rem}
+    .success p{color:var(--muted);font-size:.95rem;line-height:1.75;max-width:400px;margin:0 auto 1.5rem}
+    .success .arabic{font-size:1.3rem;color:var(--gold-lt);margin-top:1.2rem;opacity:.7}
+
+    /* ── FOOTER ── */
+    footer{
+      position:relative;z-index:1;
+      border-top:1px solid var(--gborder);
+      padding:1.5rem 2rem;
+      display:flex;align-items:center;justify-content:space-between;
+      font-size:.78rem;color:rgba(255,255,255,.3)
+    }
+    footer a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+    footer a:hover{color:white}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:580px){
+      .form-row{grid-template-columns:1fr}
+      .how-it-works{flex-direction:column}
+      .hw-step{border-right:none;border-bottom:1px solid var(--gborder);flex-direction:row;text-align:left;gap:.9rem}
+      .hw-step:last-child{border-bottom:none}
+      main{padding:2.5rem 1rem 4rem}
+      .form-card{padding:1.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-bg">
+  <div class="bg-ring"></div>
+  <div class="bg-ring"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">⭐</div>
+    <div class="logo-text">Moosa Trust <span>UK Charitable Trust</span></div>
+  </a>
+  <a href="/" class="nav-back">← Back to main site</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="page-wrap">
+
+    <!-- Header -->
+    <div class="page-hdr">
+      <span class="label">Community Giving</span>
+      <h1 class="page-title">Request a<br><em>Collection Box</em></h1>
+      <p class="page-sub">Place a Moosa Trust collection box in your home, workplace, or community space — and turn everyday generosity into real change. Fill in the form below and a trustee will be in touch to arrange delivery.</p>
+    </div>
+
+    <!-- How it works -->
+    <div class="how-it-works">
+      <div class="hw-step">
+        <div class="hw-num">1</div>
+        <p class="hw-label">Fill in this form with your details</p>
+      </div>
+      <div class="hw-step">
+        <div class="hw-num">2</div>
+        <p class="hw-label">A trustee calls to arrange drop-off</p>
+      </div>
+      <div class="hw-step">
+        <div class="hw-num">3</div>
+        <p class="hw-label">Box is collected and funds are banked</p>
+      </div>
+      <div class="hw-step">
+        <div class="hw-num">4</div>
+        <p class="hw-label">100% reaches those in need</p>
+      </div>
+    </div>
+
+    <!-- Form card -->
+    <div class="form-card">
+      <div id="form-body">
+        <h2>Your Details</h2>
+
+        <div class="notice">
+          📦 Once submitted, a trustee will call you within <strong>2–3 days</strong> to confirm your address and arrange a convenient time for drop-off. All collection boxes are logged in our donations register.
+        </div>
+
+        <div class="form-row">
+          <div class="fg">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="first_name" placeholder="e.g. Ahmed" autocomplete="given-name" required>
+          </div>
+          <div class="fg">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" name="last_name" placeholder="e.g. Ali" autocomplete="family-name" required>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" autocomplete="tel" required>
+        </div>
+
+        <div class="fg">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com (optional)" autocomplete="email">
+        </div>
+
+        <div class="fg">
+          <label for="address">Address *</label>
+          <input type="text" id="address" name="address_line1" placeholder="House number and street" autocomplete="address-line1" required>
+        </div>
+
+        <div class="form-row">
+          <div class="fg">
+            <label for="city">Town / City *</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Birmingham" autocomplete="address-level2" required>
+          </div>
+          <div class="fg">
+            <label for="postcode">Postcode *</label>
+            <input type="text" id="postcode" name="postcode" placeholder="e.g. B1 1AA" autocomplete="postal-code" required>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label for="location_type">Where will the box be placed?</label>
+          <select id="location_type" name="location_type">
+            <option value="">Select an option...</option>
+            <option>My home</option>
+            <option>My workplace</option>
+            <option>A community space / masjid</option>
+            <option>A shop or business</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="fg">
+          <label for="notes">Anything else we should know?</label>
+          <textarea id="notes" name="notes" placeholder="e.g. best time to call, access instructions, etc."></textarea>
+        </div>
+
+        <button type="button" class="f-submit" id="submitBtn" onclick="submitForm()">
+          Request My Collection Box 📦
+        </button>
+      </div>
+
+      <!-- Success state -->
+      <div class="success" id="success-state">
+        <div class="success-icon">📦✅</div>
+        <h2>Request Received!</h2>
+        <p>JazakAllah Khayran. A trustee will call you within 2–3 days to arrange your collection box drop-off. Every coin you collect will reach someone who truly needs it.</p>
+        <p>May Allah accept it from you as a Sadaqah Jariyah. آمين</p>
+        <p class="arabic">بارك الله فيك</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span>© <span id="yr"></span> Moosa Trust UK</span>
+  <a href="/">moosatrustuk.org</a>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  async function submitForm() {
+    const btn = document.getElementById('submitBtn');
+
+    // Validation
+    const required = ['fname','lname','phone','address','city','postcode'];
+    for (const id of required) {
+      if (!document.getElementById(id).value.trim()) {
+        document.getElementById(id).focus();
+        document.getElementById(id).style.borderColor = 'rgba(248,113,113,.7)';
+        setTimeout(() => document.getElementById(id).style.borderColor = '', 2000);
+        alert('Please fill in all required fields marked with *');
+        return;
+      }
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending request…';
+
+    const data = {
+      first_name:    document.getElementById('fname').value.trim(),
+      last_name:     document.getElementById('lname').value.trim(),
+      phone:         document.getElementById('phone').value.trim(),
+      email:         document.getElementById('email').value.trim(),
+      address:       document.getElementById('address').value.trim(),
+      city:          document.getElementById('city').value.trim(),
+      postcode:      document.getElementById('postcode').value.trim(),
+      location_type: document.getElementById('location_type').value,
+      notes:         document.getElementById('notes').value.trim(),
+      _subject:      'New Collection Box Request — Moosa Trust UK',
+    };
+
+    try {
+      const res = await fetch('https://formspree.io/f/mnjbbpoj', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        document.getElementById('form-body').style.display = 'none';
+        document.getElementById('success-state').style.display = 'block';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Request My Collection Box 📦';
+      alert('Something went wrong — please try again or call us directly.');
+    }
+  }
+</script>
+</body>
+</html>
