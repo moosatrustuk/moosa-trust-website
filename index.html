@@ -249,22 +249,30 @@
     ════════════════════════════ */
     #donate{padding:9rem 0}
     .donate-wrap{max-width:1000px;margin:0 auto}
-    .donate-hdr{text-align:center;margin-bottom:4rem}
-    .donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-    .d-card{padding:2.4rem;border-radius:24px}
-    .d-card-hdr{display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem}
-    .d-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
-    .d-icon.online{background:linear-gradient(135deg,var(--emerald),var(--mint))}
-    .d-icon.bank{background:linear-gradient(135deg,#7a5015,var(--gold))}
-    .d-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700}
-    .d-sub{font-size:.78rem;color:var(--muted);margin-top:2px}
-    .d-body{font-size:.875rem;color:var(--muted);line-height:1.75;margin-bottom:1.4rem}
-    .bank-notice{background:rgba(201,148,58,.08);border:1px solid rgba(201,148,58,.25);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.8rem}
-    .bank-notice p{font-size:.82rem;color:rgba(255,255,255,.75);line-height:1.6}
-    .bank-notice strong{color:var(--gold-lt)}
-    .brow{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:.85rem 1.1rem;margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center}
-    .blbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
-    .bval{font-weight:600;font-size:.9rem}
+    .donate-hdr{text-align:center;margin-bottom:3rem}
+
+    /* Suggested amounts */
+    .amounts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem}
+    .amount-card{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      padding:1.8rem 1rem;border-radius:18px;text-align:center;text-decoration:none;
+      background:var(--glass);border:1px solid var(--gborder);
+      transition:all .3s;position:relative;overflow:hidden;
+    }
+    .amount-card:hover{background:rgba(255,255,255,.1);border-color:rgba(201,148,58,.5);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+    .amount-featured{background:rgba(201,148,58,.1);border-color:rgba(201,148,58,.45)}
+    .amount-featured:hover{background:rgba(201,148,58,.18)}
+    .amount-badge{position:absolute;top:.7rem;right:.7rem;background:var(--gold);color:var(--deep);font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .55rem;border-radius:999px}
+    .amount-val{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--gold-lt);line-height:1;margin-bottom:.6rem}
+    .amount-card:hover .amount-val{color:white}
+    .amount-desc{font-size:.76rem;color:var(--muted);line-height:1.5}
+
+    /* Givey CTA bar */
+    .givey-cta{background:linear-gradient(135deg,rgba(45,106,79,.35),rgba(201,148,58,.12));border:1px solid rgba(201,148,58,.3);border-radius:18px;padding:1.6rem 2rem;margin-bottom:1.5rem}
+    .givey-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+
+    /* Collection box CTA */
+    .cbox-cta{text-align:center;padding:1.8rem 2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:18px}
 
     /* ════════════════════════════
        GALLERY
@@ -395,16 +403,18 @@
       .about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
       .art-wrap{height:300px}
       .causes-grid,.values-grid,.trustees-grid{grid-template-columns:1fr 1fr}
-      .donate-grid{grid-template-columns:1fr}
+      .amounts-grid{grid-template-columns:1fr 1fr}
       .impact-grid{grid-template-columns:repeat(2,1fr)}
       .faq-side{position:static}
       .footer-grid{grid-template-columns:1fr;gap:2.5rem}
       .footer-bot{flex-direction:column;gap:.8rem;text-align:center}
       .nav-links{display:none}
       .menu-btn{display:flex}
+      .givey-cta-inner{flex-direction:column;text-align:center}
     }
     @media(max-width:600px){
       .causes-grid,.values-grid,.trustees-grid{grid-template-columns:1fr}
+      .amounts-grid{grid-template-columns:1fr 1fr}
       .hero-stats{flex-direction:column}
       .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.09)}
       .stat:last-child{border-bottom:none}
@@ -652,46 +662,45 @@
     <div class="donate-wrap">
       <div class="donate-hdr">
         <span class="label fade">Give Today</span>
-        <h2 class="heading fade d1" style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;">Your £10 could give a family<br><em style="color:var(--gold-lt);font-style:italic;">clean water for a year.</em></h2>
-        <p class="subtext fade d2" style="max-width:520px;margin:0 auto">Every single penny reaches those in need. Choose how you'd like to give — both options are secure, simple, and carry the full weight of your intention.</p>
+        <h2 class="heading fade d1" style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;">Every penny reaches<br><em style="color:var(--gold-lt);font-style:italic;">someone who needs it.</em></h2>
+        <p class="subtext fade d2" style="max-width:520px;margin:0 auto">Donate securely through Givey. Gift Aid is built in — if you're a UK taxpayer, we'll claim an extra 25p on every £1 at no cost to you.</p>
       </div>
-      <div class="donate-grid">
 
-        <!-- Online -->
-        <div class="card d-card fade">
-          <div class="d-card-hdr">
-            <div class="d-icon online">💻</div>
-            <div>
-              <h3 class="d-title">Give Online</h3>
-              <p class="d-sub">Secure · Takes 60 seconds · Gift Aid ready</p>
-            </div>
+      <!-- Suggested amounts -->
+      <div class="amounts-grid fade d1">
+        <a href="https://www.givey.com/moosatrustuk" target="_blank" rel="noopener noreferrer" class="amount-card">
+          <div class="amount-val">£5</div>
+          <div class="amount-desc">Provides a family with clean water for a month</div>
+        </a>
+        <a href="https://www.givey.com/moosatrustuk" target="_blank" rel="noopener noreferrer" class="amount-card">
+          <div class="amount-val">£10</div>
+          <div class="amount-desc">Supplies a child with school materials for a term</div>
+        </a>
+        <a href="https://www.givey.com/moosatrustuk" target="_blank" rel="noopener noreferrer" class="amount-card amount-featured">
+          <div class="amount-badge">Most Popular</div>
+          <div class="amount-val">£25</div>
+          <div class="amount-desc">Helps feed a family in hardship for a week</div>
+        </a>
+        <a href="https://www.givey.com/moosatrustuk" target="_blank" rel="noopener noreferrer" class="amount-card">
+          <div class="amount-val">£50</div>
+          <div class="amount-desc">Contributes toward a clean water well installation</div>
+        </a>
+      </div>
+
+      <!-- Givey CTA -->
+      <div class="givey-cta fade d2">
+        <div class="givey-cta-inner">
+          <div>
+            <p style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:.35rem">Give any amount via Givey</p>
+            <p style="font-size:.875rem;color:var(--muted)">Secure · Instant confirmation · Gift Aid ready · Takes 60 seconds</p>
           </div>
-          <p class="d-body">Donate through our Givey page and your money moves straight to those who need it. If you're a UK taxpayer, tick Gift Aid and we'll claim an extra 25p on every £1 — at no cost to you.</p>
-          <a href="https://www.givey.com/moosatrustuk" target="_blank" rel="noopener noreferrer" class="btn-gold" style="justify-content:center;width:100%">Donate via Givey ↗</a>
+          <a href="https://www.givey.com/moosatrustuk" target="_blank" rel="noopener noreferrer" class="btn-gold">Donate Now ↗</a>
         </div>
-
-        <!-- Bank -->
-        <div class="card d-card fade d1">
-          <div class="d-card-hdr">
-            <div class="d-icon bank">🏦</div>
-            <div>
-              <h3 class="d-title">Bank Transfer</h3>
-              <p class="d-sub">Standing order or one-off</p>
-            </div>
-          </div>
-          <p class="d-body">Prefer to give by bank transfer or set up a regular standing order? Our NatWest account is nearly ready. In the meantime, get in touch and we'll sort it out personally.</p>
-          <div class="bank-notice">
-            <p>⏳ <strong>Account setup in progress</strong> — full bank details will be published here once live. Please use Givey or email us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="731e1c1c00120701060007061833141e121a1f5d101c1e">[email&#160;protected]</a></strong> in the interim.</p>
-          </div>
-          <div class="brow"><span class="blbl">Account Name</span><span class="bval">Moosa Trust UK</span></div>
-          <div class="brow"><span class="blbl">Bank</span><span class="bval">NatWest (coming soon)</span></div>
-        </div>
-
       </div>
 
       <!-- Collection box CTA -->
-      <div style="margin-top:2rem;text-align:center;padding:1.8rem 2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:18px;" class="fade d2">
-        <p style="font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem">Community Giving</p>
+      <div class="cbox-cta fade d3">
+        <p class="label" style="margin-bottom:.6rem">Community Giving</p>
         <p style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:.5rem">Want a collection box for your home or workplace?</p>
         <p style="font-size:.875rem;color:var(--muted);margin-bottom:1.2rem">Fill in a quick form and a trustee will drop one off to you personally.</p>
         <a href="/collection-box" class="btn-outline" style="display:inline-flex">Request a Collection Box →</a>
@@ -810,7 +819,7 @@
 
         <div class="faq-item fade d1">
           <button class="faq-q">How is my donation used? <span class="faq-arr">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Your donation goes directly to charitable causes: clean water projects, education initiatives, and poverty relief. We use Gift Aid to cover overheads (or covered by trustees) to ensure 100% of every pound you give reaches those in need.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Your donation goes directly to charitable causes: clean water projects, education initiatives, and poverty relief. We donate through Givey which handles Gift Aid automatically — meaning we can claim an extra 25p per £1 from HMRC at no cost to you, maximising every pound.</div></div>
         </div>
 
         <div class="faq-item fade d1">
@@ -825,17 +834,12 @@
 
         <div class="faq-item fade d2">
           <button class="faq-q">Will I receive a donation confirmation? <span class="faq-arr">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Yes! For online donations made via Givey, you'll automatically receive an email confirmation with the amount and date. For bank transfers or standing orders, we can provide confirmation upon request via email at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cba6a4a4b8aabfb9beb8bfbea08baca6aaa2a7e5a8a4a6">[email&#160;protected]</a>.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Yes. When you donate through Givey you'll automatically receive an email confirmation with the amount, date, and a receipt. Gift Aid is handled automatically too — no paperwork needed from you.</div></div>
         </div>
 
         <div class="faq-item fade d2">
           <button class="faq-q">How can I track the impact of my donation? <span class="faq-arr">+</span></button>
           <div class="faq-a"><div class="faq-a-inner">We send email updates to all subscribers after every appeal, showing projects funded, funds deployed, and real stories from beneficiaries. Each appeal includes a detailed impact report with photos, testimonials, and transparent breakdowns of exactly how donations created change.</div></div>
-        </div>
-
-        <div class="faq-item fade d2">
-          <button class="faq-q">How do I set up a monthly standing order? <span class="faq-arr">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Our bank account is currently being set up with NatWest. Once live, full details will be published here. In the meantime, please donate via Givey or contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f6260607c6e7b7d7a7c7b7a644f68626e6663216c6062">[email&#160;protected]</a> to arrange payment. Regular giving, however small, sustains real lives.</div></div>
         </div>
 
         <div class="faq-item fade d3">
