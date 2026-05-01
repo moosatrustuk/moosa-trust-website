@@ -66,6 +66,7 @@ fine; only the preview card is degraded.
 | Homepage `/`                          | `home.jpg`       |
 | `/blog/`                              | `blog.jpg`       |
 | `/blog/why-we-created-moosa-trust/`   | `blog-founder-letter.jpg` |
+| `/blog/hajj-qurbani-and-trust/`       | `blog-hajj-qurbani.jpg` |
 | `/projects/`                          | `projects.jpg`   |
 | `/projects/sri-lanka-well/`           | `sri-lanka-well.jpg` |
 | `/projects/education-initiative/`     | `education-initiative.jpg` |
