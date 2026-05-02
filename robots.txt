@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /projects/_debrief-template.html
 
 Sitemap: https://moosatrustuk.org/sitemap.xml

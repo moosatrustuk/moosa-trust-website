@@ -79,7 +79,7 @@
     .coming-soon-badge{display:inline-block;background:var(--stone);color:var(--text-muted);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .7rem;border-radius:999px;border:1px solid var(--gborder)}
 
     /* HERO */
-    #hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;background:var(--forest);color:white}
+    #hero{min-height:100vh;min-height:100dvh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;background:var(--forest);color:white}
     .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 110% 70% at 50% -5%,rgba(45,106,79,.6) 0%,transparent 65%),radial-gradient(ellipse 55% 50% at 85% 85%,rgba(201,148,58,.18) 0%,transparent 60%),radial-gradient(ellipse 45% 55% at 5% 90%,rgba(82,183,136,.12) 0%,transparent 55%)}
     .hero-ring{position:absolute;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(201,148,58,.1);animation:ring 8s ease-in-out infinite}
     .hero-ring:nth-child(1){width:480px;height:480px}.hero-ring:nth-child(2){width:720px;height:720px;animation-delay:2s;border-color:rgba(82,183,136,.07)}.hero-ring:nth-child(3){width:980px;height:980px;animation-delay:4s;border-color:rgba(201,148,58,.05)}
@@ -193,6 +193,7 @@
     .fg textarea{min-height:110px;resize:vertical}.fg select option{background:white;color:var(--text)}
     .fg .field-error{display:none;font-size:.78rem;color:#c53030;margin-top:.35rem}
     .fg.has-error input,.fg.has-error textarea,.fg.has-error select{border-color:#c53030}.fg.has-error .field-error{display:block}
+    .form-status{min-height:1em;margin-top:.8rem;text-align:center;font-size:.82rem;color:#c53030}.form-status:empty{display:none}
     .f-submit{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:white;border:none;border-radius:10px;padding:1rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem}
     .f-submit:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(201,148,58,.2)}
     .f-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
@@ -225,7 +226,7 @@
   </style>
 </head>
 <body>
-<noscript><div style="background:#c53030;color:white;text-align:center;padding:1rem;font-size:.9rem">This website requires JavaScript to function. Please enable JavaScript in your browser settings.</div></noscript>
+<noscript><div style="background:#1B4332;color:#FAF8F3;text-align:center;padding:.7rem 1rem;font-size:.85rem;line-height:1.5">JavaScript is disabled. You can still read every page and reach us on <a href="https://wa.me/447854690073" style="color:#e8b86d;text-decoration:underline">WhatsApp</a>; the mobile menu, FAQ, and contact form need JavaScript to work.</div></noscript>
 <a href="#about" class="skip-link">Skip to content</a>
 <div id="progress"></div>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -264,8 +265,14 @@
 
 <section id="about"><div class="container"><div class="about-grid">
   <div class="art-wrap fade">
-    <div class="art-main"><img src="/about-main.jpg" alt="Moosa Trust UK community project" loading="lazy" decoding="async" width="6000" height="4000"></div>
-    <div class="art-secondary"><img src="/about-water.jpg" alt="Clean water initiative" loading="lazy" decoding="async" width="4384" height="2923"></div>
+    <div class="art-main"><picture>
+      <source type="image/webp" srcset="/about-main-480.webp 480w, /about-main-960.webp 960w, /about-main-1600.webp 1600w" sizes="(max-width:960px) 92vw, 520px">
+      <img src="/about-main-960.jpg" srcset="/about-main-480.jpg 480w, /about-main-960.jpg 960w, /about-main-1600.jpg 1600w" sizes="(max-width:960px) 92vw, 520px" alt="Moosa Trust UK community project" loading="lazy" decoding="async" width="1600" height="1067">
+    </picture></div>
+    <div class="art-secondary"><picture>
+      <source type="image/webp" srcset="/about-water-480.webp 480w, /about-water-960.webp 960w" sizes="(max-width:960px) 50vw, 290px">
+      <img src="/about-water-480.jpg" srcset="/about-water-480.jpg 480w, /about-water-960.jpg 960w" sizes="(max-width:960px) 50vw, 290px" alt="Clean water initiative" loading="lazy" decoding="async" width="960" height="640">
+    </picture></div>
     <div class="art-badge"><div class="art-badge-n">100%</div><div class="art-badge-l">Goes to<br>Charity</div></div>
   </div>
   <div>
@@ -289,9 +296,18 @@
 <section id="causes"><div class="container">
   <div class="causes-hdr"><span class="label fade">Where Your Money Goes</span><h2 class="heading fade d1">Three causes.<br>One purpose.</h2><p class="subtext fade d2">Every donation is directed into one of three areas where the need is greatest and the impact is lasting.</p></div>
   <div class="causes-grid">
-    <div class="card cause-card fade"><div class="cause-art"><img src="/water.jpg" alt="Clean water well project" loading="lazy" decoding="async" width="5184" height="3456"><div class="cause-tag">Thirst Relief</div></div><div class="cause-body"><h3 class="cause-title">Clean Water &amp; Wells</h3><p class="cause-desc">785 million people live without clean water. A well doesn't just quench thirst, it ends hours of daily labour, cuts child illness, and keeps girls in school. Every well you fund is a Sadaqah Jariyah flowing long after you're gone.</p><div class="cause-cta"><a href="/projects/sri-lanka-well/">See our first project <svg style="width:14px;height:14px"><use href="#i-arrow-right"/></svg></a></div></div></div>
-    <div class="card cause-card fade d1"><div class="cause-art"><img src="/education.jpg" alt="Education and schools initiative" loading="lazy" decoding="async" width="5184" height="3456"><div class="cause-tag">Bright Futures</div></div><div class="cause-body"><h3 class="cause-title">Education &amp; Schools</h3><p class="cause-desc">A child without education is a future locked away. We fund classrooms, supplies, and teacher training in underserved communities, because Iqra was the first word revealed, and knowledge is the most enduring gift.</p><div class="cause-cta"><a href="#donate">Support education <svg style="width:14px;height:14px"><use href="#i-arrow-right"/></svg></a></div></div></div>
-    <div class="card cause-card fade d2"><div class="cause-art"><img src="/relief.jpg" alt="Emergency aid and poverty relief" loading="lazy" decoding="async" width="6000" height="4000"><div class="cause-tag">Hardship Relief</div></div><div class="cause-body"><h3 class="cause-title">Poverty &amp; Emergency Aid</h3><p class="cause-desc">When crisis strikes, flood, famine, or sudden loss, families need help now, not in six months. We move quickly, act with dignity, and stay for the long term. Because the Prophet ﷺ said: the best of people are those most beneficial to others.</p><div class="cause-cta"><a href="#donate">Give emergency aid <svg style="width:14px;height:14px"><use href="#i-arrow-right"/></svg></a></div></div></div>
+    <div class="card cause-card fade"><div class="cause-art"><picture>
+      <source type="image/webp" srcset="/water-480.webp 480w, /water-960.webp 960w, /water-1600.webp 1600w" sizes="(max-width:600px) 92vw, (max-width:960px) 46vw, 30vw">
+      <img src="/water-960.jpg" srcset="/water-480.jpg 480w, /water-960.jpg 960w, /water-1600.jpg 1600w" sizes="(max-width:600px) 92vw, (max-width:960px) 46vw, 30vw" alt="Clean water well project" loading="lazy" decoding="async" width="1600" height="1067">
+    </picture><div class="cause-tag">Thirst Relief</div></div><div class="cause-body"><h3 class="cause-title">Clean Water &amp; Wells</h3><p class="cause-desc">785 million people live without clean water. A well doesn't just quench thirst, it ends hours of daily labour, cuts child illness, and keeps girls in school. Every well you fund is a Sadaqah Jariyah flowing long after you're gone.</p><div class="cause-cta"><a href="/projects/sri-lanka-well/">See our first project <svg aria-hidden="true" focusable="false" style="width:14px;height:14px"><use href="#i-arrow-right"/></svg></a></div></div></div>
+    <div class="card cause-card fade d1"><div class="cause-art"><picture>
+      <source type="image/webp" srcset="/education-480.webp 480w, /education-960.webp 960w, /education-1600.webp 1600w" sizes="(max-width:600px) 92vw, (max-width:960px) 46vw, 30vw">
+      <img src="/education-960.jpg" srcset="/education-480.jpg 480w, /education-960.jpg 960w, /education-1600.jpg 1600w" sizes="(max-width:600px) 92vw, (max-width:960px) 46vw, 30vw" alt="Education and schools initiative" loading="lazy" decoding="async" width="1600" height="1067">
+    </picture><div class="cause-tag">Bright Futures</div></div><div class="cause-body"><h3 class="cause-title">Education &amp; Schools</h3><p class="cause-desc">A child without education is a future locked away. We fund classrooms, supplies, and teacher training in underserved communities, because Iqra was the first word revealed, and knowledge is the most enduring gift.</p><div class="cause-cta"><a href="#donate">Support education <svg aria-hidden="true" focusable="false" style="width:14px;height:14px"><use href="#i-arrow-right"/></svg></a></div></div></div>
+    <div class="card cause-card fade d2"><div class="cause-art"><picture>
+      <source type="image/webp" srcset="/relief-480.webp 480w, /relief-960.webp 960w, /relief-1600.webp 1600w" sizes="(max-width:600px) 92vw, (max-width:960px) 46vw, 30vw">
+      <img src="/relief-960.jpg" srcset="/relief-480.jpg 480w, /relief-960.jpg 960w, /relief-1600.jpg 1600w" sizes="(max-width:600px) 92vw, (max-width:960px) 46vw, 30vw" alt="Emergency aid and poverty relief" loading="lazy" decoding="async" width="1600" height="1067">
+    </picture><div class="cause-tag">Hardship Relief</div></div><div class="cause-body"><h3 class="cause-title">Poverty &amp; Emergency Aid</h3><p class="cause-desc">When crisis strikes, flood, famine, or sudden loss, families need help now, not in six months. We move quickly, act with dignity, and stay for the long term. Because the Prophet ﷺ said: the best of people are those most beneficial to others.</p><div class="cause-cta"><a href="#donate">Give emergency aid <svg aria-hidden="true" focusable="false" style="width:14px;height:14px"><use href="#i-arrow-right"/></svg></a></div></div></div>
   </div>
 </div></section>
 
@@ -312,7 +328,7 @@
     <div class="donate-option">
       <h3>Collection Box</h3>
       <p>Place a Moosa Trust collection box in your home, workplace, or community space. A trustee will personally drop one off and collect it when full.</p>
-      <a href="/collection-box" class="btn-outline btn-sm">Request a Box →</a>
+      <a href="/collection-box/" class="btn-outline btn-sm">Request a Box →</a>
     </div>
   </div>
 
@@ -332,9 +348,9 @@
 <section id="values"><div class="container">
   <div class="values-hdr"><span class="label fade">How We Work</span><h2 class="heading fade d1">Not just words.<br>How we actually operate.</h2></div>
   <div class="values-grid">
-    <div class="card v-card fade"><div class="v-icon vi-g"><svg><use href="#i-shield"/></svg></div><h3 class="v-title">Amanah, Trust</h3><p class="v-desc">You'll never wonder where your money went. Every donation is tracked, every project is documented, and every penny is accounted for. We report back because you deserve to know.</p></div>
-    <div class="card v-card fade d1"><div class="v-icon vi-o"><svg><use href="#i-star"/></svg></div><h3 class="v-title">Ihsan, Excellence</h3><p class="v-desc">We don't cut corners on the people we serve. We choose partners carefully, vet projects rigorously, and hold ourselves to the standard of someone who knows Allah is watching. Because He is.</p></div>
-    <div class="card v-card fade d2"><div class="v-icon vi-b"><svg><use href="#i-heart"/></svg></div><h3 class="v-title">Rahma, Mercy</h3><p class="v-desc">Need has no religion or nationality. We serve every human being who is suffering, with the same dignity, care, and urgency, because that is what our faith demands of us.</p></div>
+    <div class="card v-card fade"><div class="v-icon vi-g"><svg aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></div><h3 class="v-title">Amanah, Trust</h3><p class="v-desc">You'll never wonder where your money went. Every donation is tracked, every project is documented, and every penny is accounted for. We report back because you deserve to know.</p></div>
+    <div class="card v-card fade d1"><div class="v-icon vi-o"><svg aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div><h3 class="v-title">Ihsan, Excellence</h3><p class="v-desc">We don't cut corners on the people we serve. We choose partners carefully, vet projects rigorously, and hold ourselves to the standard of someone who knows Allah is watching. Because He is.</p></div>
+    <div class="card v-card fade d2"><div class="v-icon vi-b"><svg aria-hidden="true" focusable="false"><use href="#i-heart"/></svg></div><h3 class="v-title">Rahma, Mercy</h3><p class="v-desc">Need has no religion or nationality. We serve every human being who is suffering, with the same dignity, care, and urgency, because that is what our faith demands of us.</p></div>
   </div>
 </div></section>
 
@@ -342,29 +358,29 @@
 <section id="trustees"><div class="container">
   <div class="trustees-hdr"><span class="label fade">Who's Responsible</span><h2 class="heading fade d1">Real people.<br>Real accountability.</h2><p class="subtext fade d2" style="max-width:480px;margin:0 auto">We put our names to this. Three trustees, personally responsible for every decision, every pound, every project. No hiding behind a logo.</p></div>
   <div class="trustees-grid">
-    <div class="card t-card fade"><div class="t-avatar-ring"><img src="/minhaz.jpg" alt="Minhaz Moosa" width="84" height="84" loading="lazy" decoding="async"></div><h3 class="t-name">Minhaz Moosa</h3><p class="t-role">Chair &amp; Lead Trustee</p><p class="t-desc">Leads governance and strategic direction, making sure every decision we take is rooted in our mission, our values, and our duty to the people we serve.</p></div>
-    <div class="card t-card fade d1"><div class="t-avatar-ring"><img src="/faizel.jpg" alt="Faizel Moosa" width="84" height="84" loading="lazy" decoding="async"></div><h3 class="t-name">Faizel Moosa</h3><p class="t-role">Treasurer</p><p class="t-desc">Holds the Trust to its financial promises, tracking every donation, maintaining transparency, and ensuring our donors and beneficiaries can always trust us completely.</p></div>
-    <div class="card t-card fade d2"><div class="t-avatar-ring"><img src="/zubair.jpg" alt="Zubair Moosa" width="84" height="84" loading="lazy" decoding="async"></div><h3 class="t-name">Zubair Moosa</h3><p class="t-role">Projects Lead</p><p class="t-desc">Brings careful judgement to how and where funds are deployed, scrutinising project selection so your generosity goes where it will do the most good.</p></div>
+    <div class="card t-card fade"><div class="t-avatar-ring"><picture><source type="image/webp" srcset="/minhaz-168.webp"><img src="/minhaz-168.jpg" alt="Minhaz Moosa" width="84" height="84" loading="lazy" decoding="async"></picture></div><h3 class="t-name">Minhaz Moosa</h3><p class="t-role">Chair &amp; Lead Trustee</p><p class="t-desc">Leads governance and strategic direction, making sure every decision we take is rooted in our mission, our values, and our duty to the people we serve.</p></div>
+    <div class="card t-card fade d1"><div class="t-avatar-ring"><picture><source type="image/webp" srcset="/faizel-168.webp"><img src="/faizel-168.jpg" alt="Faizel Moosa" width="84" height="84" loading="lazy" decoding="async"></picture></div><h3 class="t-name">Faizel Moosa</h3><p class="t-role">Treasurer</p><p class="t-desc">Holds the Trust to its financial promises, tracking every donation, maintaining transparency, and ensuring our donors and beneficiaries can always trust us completely.</p></div>
+    <div class="card t-card fade d2"><div class="t-avatar-ring"><picture><source type="image/webp" srcset="/zubair-168.webp"><img src="/zubair-168.jpg" alt="Zubair Moosa" width="84" height="84" loading="lazy" decoding="async"></picture></div><h3 class="t-name">Zubair Moosa</h3><p class="t-role">Projects Lead</p><p class="t-desc">Brings careful judgement to how and where funds are deployed, scrutinising project selection so your generosity goes where it will do the most good.</p></div>
   </div>
 </div></section>
 
 <section id="faq"><div class="container"><div class="faq-grid">
   <div class="faq-side"><span class="label fade">Questions</span><h2 class="heading fade d1">Honest answers.<br>No waffle.</h2><div class="divider fade d1"></div><p class="subtext fade d2">If something isn't answered here, ask us directly. We'll always give you a straight answer.</p><div style="margin-top:2rem" class="fade d3"><a href="#contact" class="btn-outline btn-sm">Contact Us</a></div></div>
   <div class="faq-list">
-    <div class="faq-item fade"><button class="faq-q" aria-expanded="false" aria-controls="faq-a1">Are you registered with the Charity Commission? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a1" role="region"><div class="faq-a-inner">We are currently an unincorporated charitable trust with income expected to remain below £5,000 in 2026. If the Trust exceeds the registration threshold (£5,000 annual income), trustees will take appropriate steps to register with the Charity Commission.</div></div></div>
-    <div class="faq-item fade d1"><button class="faq-q" aria-expanded="false" aria-controls="faq-a2">What's your 100% donation policy? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a2" role="region"><div class="faq-a-inner">Every penny donated goes directly to beneficiaries and charitable projects. Operational costs (minimal administrative expenses, banking fees, website hosting) are covered via Gift Aid or, if higher, separately by the trustees personally, ensuring your full donation creates impact.</div></div></div>
-    <div class="faq-item fade d1"><button class="faq-q" aria-expanded="false" aria-controls="faq-a3">How is my donation used? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a3" role="region"><div class="faq-a-inner">Your donation goes directly to charitable causes: clean water projects, education initiatives, and poverty relief. We are currently setting up online donations via Givey (with automatic Gift Aid) and bank standing orders, both coming soon, insha'Allah.</div></div></div>
-    <div class="faq-item fade d1"><button class="faq-q" aria-expanded="false" aria-controls="faq-a4">How do you decide where funds go? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a4" role="region"><div class="faq-a-inner">Our trustees carefully review needs and opportunities, prioritising relief of immediate hardship alongside sustainable initiatives in education and clean water. We communicate all major decisions and provide regular updates to donors on fund allocation and project outcomes.</div></div></div>
-    <div class="faq-item fade d2"><button class="faq-q" aria-expanded="false" aria-controls="faq-a5">How do I get a receipt for my donation? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a5" role="region"><div class="faq-a-inner">Donation receipts are currently provided via WhatsApp. When you make a donation, whether cash or via a collection box, a trustee will send you a confirmation receipt through WhatsApp with the amount, date, and reference. Once online donations are live, you'll also receive automatic email confirmations.</div></div></div>
-    <div class="faq-item fade d2"><button class="faq-q" aria-expanded="false" aria-controls="faq-a6">Can I Gift Aid my donation? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a6" role="region"><div class="faq-a-inner">Yes! If you're a UK taxpayer, Gift Aid allows us to claim an additional 25p for every £1 you donate at no extra cost, significantly increasing your impact. Gift Aid will be handled automatically once our Givey page is live. In the meantime, speak to a trustee via WhatsApp for Gift Aid on cash donations.</div></div></div>
-    <div class="faq-item fade d2"><button class="faq-q" aria-expanded="false" aria-controls="faq-a7">How can I track the impact of my donation? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a7" role="region"><div class="faq-a-inner">We provide regular updates to donors after every project, showing funds deployed, real stories from beneficiaries, and transparent breakdowns of how donations created change. You can also visit our <a href="/projects/sri-lanka-well/">projects page</a> to see our current and completed initiatives.</div></div></div>
-    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a8">How do I set up a standing order? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a8" role="region"><div class="faq-a-inner">Standing orders are coming soon, we are currently in the process of setting up our bank account. Once the account is live, we'll share the details so you can set up a regular monthly donation directly from your bank. Watch this space, insha'Allah.</div></div></div>
-    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a9">Can I donate via Zakat? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a9" role="region"><div class="faq-a-inner">We are not yet set up to accept Zakat, this is the next step in our journey. We hope to be in a position to accept Zakat donations in the near future, insha'Allah. We do accept Sadaqah and Sadaqah Jariyah donations. Please consult with a qualified Islamic scholar for specific guidance on Zakat distributions.</div></div></div>
-    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a10">Can I donate in memory of someone? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a10" role="region"><div class="faq-a-inner">Absolutely. Many donors give Sadaqah Jariyah (ongoing charity) in memory of loved ones. Just let us know via <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> or the contact form, and we'll acknowledge this appropriately in our records.</div></div></div>
-    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a11">Do you accept cash donations or collection tins? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a11" role="region"><div class="faq-a-inner">Yes. Message us on <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> to arrange a cash donation. We maintain location logs for collection tins, count cash with two trustees present, and bank deposits promptly. All cash donations are recorded in our donations register.</div></div></div>
-    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a12">Can I volunteer with Moosa Trust UK? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a12" role="region"><div class="faq-a-inner">We're a small trust and always appreciate offers of support. While we don't have a formal volunteering programme yet, we welcome help with fundraising, community outreach, and spreading the word. Get in touch via <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> or the contact form and let us know how you'd like to help.</div></div></div>
-    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a13">Can I donate goods or items instead of money? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a13" role="region"><div class="faq-a-inner">We currently focus on monetary donations to maximise impact and ensure funds reach the right projects efficiently. If you have goods you'd like to donate, please get in touch via <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> and we'll do our best to advise or connect you with an appropriate organisation.</div></div></div>
-    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a14">Which countries do you operate in? <svg class="faq-chevron"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a14" role="region"><div class="faq-a-inner">We work where need is greatest. Our first project is a water well in Sri Lanka. We partner with established charities who have experience and infrastructure on the ground, leveraging their expertise to ensure effective, dignified delivery of aid across communities lacking access to clean water and quality education.</div></div></div>
+    <div class="faq-item fade"><button class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Are you registered with the Charity Commission? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div class="faq-a-inner">We are currently an unincorporated charitable trust with income expected to remain below £5,000 in 2026. If the Trust exceeds the registration threshold (£5,000 annual income), trustees will take appropriate steps to register with the Charity Commission.</div></div></div>
+    <div class="faq-item fade d1"><button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">What's your 100% donation policy? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div class="faq-a-inner">Every penny donated goes directly to beneficiaries and charitable projects. Operational costs (minimal administrative expenses, banking fees, website hosting) are covered via Gift Aid or, if higher, separately by the trustees personally, ensuring your full donation creates impact.</div></div></div>
+    <div class="faq-item fade d1"><button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">How is my donation used? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div class="faq-a-inner">Your donation goes directly to charitable causes: clean water projects, education initiatives, and poverty relief. We are currently setting up online donations via Givey (with automatic Gift Aid) and bank standing orders, both coming soon, insha'Allah.</div></div></div>
+    <div class="faq-item fade d1"><button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">How do you decide where funds go? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div class="faq-a-inner">Our trustees carefully review needs and opportunities, prioritising relief of immediate hardship alongside sustainable initiatives in education and clean water. We communicate all major decisions and provide regular updates to donors on fund allocation and project outcomes.</div></div></div>
+    <div class="faq-item fade d2"><button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">How do I get a receipt for my donation? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div class="faq-a-inner">Donation receipts are currently provided via WhatsApp. When you make a donation, whether cash or via a collection box, a trustee will send you a confirmation receipt through WhatsApp with the amount, date, and reference. Once online donations are live, you'll also receive automatic email confirmations.</div></div></div>
+    <div class="faq-item fade d2"><button class="faq-q" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">Can I Gift Aid my donation? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div class="faq-a-inner">Yes! If you're a UK taxpayer, Gift Aid allows us to claim an additional 25p for every £1 you donate at no extra cost, significantly increasing your impact. Gift Aid will be handled automatically once our Givey page is live. In the meantime, speak to a trustee via WhatsApp for Gift Aid on cash donations.</div></div></div>
+    <div class="faq-item fade d2"><button class="faq-q" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">How can I track the impact of my donation? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div class="faq-a-inner">We provide regular updates to donors after every project, showing funds deployed, real stories from beneficiaries, and transparent breakdowns of how donations created change. You can also visit our <a href="/projects/sri-lanka-well/">projects page</a> to see our current and completed initiatives.</div></div></div>
+    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">How do I set up a standing order? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div class="faq-a-inner">Standing orders are coming soon, we are currently in the process of setting up our bank account. Once the account is live, we'll share the details so you can set up a regular monthly donation directly from your bank. Watch this space, insha'Allah.</div></div></div>
+    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">Can I donate via Zakat? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div class="faq-a-inner">We are not yet set up to accept Zakat, this is the next step in our journey. We hope to be in a position to accept Zakat donations in the near future, insha'Allah. We do accept Sadaqah and Sadaqah Jariyah donations. Please consult with a qualified Islamic scholar for specific guidance on Zakat distributions.</div></div></div>
+    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">Can I donate in memory of someone? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a10" role="region" aria-labelledby="faq-q10"><div class="faq-a-inner">Absolutely. Many donors give Sadaqah Jariyah (ongoing charity) in memory of loved ones. Just let us know via <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> or the contact form, and we'll acknowledge this appropriately in our records.</div></div></div>
+    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a11" id="faq-q11">Do you accept cash donations or collection tins? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a11" role="region" aria-labelledby="faq-q11"><div class="faq-a-inner">Yes. Message us on <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> to arrange a cash donation. We maintain location logs for collection tins, count cash with two trustees present, and bank deposits promptly. All cash donations are recorded in our donations register.</div></div></div>
+    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a12" id="faq-q12">Can I volunteer with Moosa Trust UK? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a12" role="region" aria-labelledby="faq-q12"><div class="faq-a-inner">We're a small trust and always appreciate offers of support. While we don't have a formal volunteering programme yet, we welcome help with fundraising, community outreach, and spreading the word. Get in touch via <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> or the contact form and let us know how you'd like to help.</div></div></div>
+    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a13" id="faq-q13">Can I donate goods or items instead of money? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a13" role="region" aria-labelledby="faq-q13"><div class="faq-a-inner">We currently focus on monetary donations to maximise impact and ensure funds reach the right projects efficiently. If you have goods you'd like to donate, please get in touch via <a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp</a> and we'll do our best to advise or connect you with an appropriate organisation.</div></div></div>
+    <div class="faq-item fade d3"><button class="faq-q" aria-expanded="false" aria-controls="faq-a14" id="faq-q14">Which countries do you operate in? <svg class="faq-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg></button><div class="faq-a" id="faq-a14" role="region" aria-labelledby="faq-q14"><div class="faq-a-inner">We work where need is greatest. Our first project is a water well in Sri Lanka. We partner with established charities who have experience and infrastructure on the ground, leveraging their expertise to ensure effective, dignified delivery of aid across communities lacking access to clean water and quality education.</div></div></div>
   </div>
 </div></div></section>
 
@@ -373,21 +389,22 @@
   <div class="fade">
     <span class="label">Talk to Us</span><h2 class="heading" style="margin-bottom:1rem">A real person<br>will reply.</h2><div class="divider"></div>
     <p class="subtext">No automated responses, no ticket systems. You'll hear directly from one of our trustees, usually within a day, insha'Allah.</p>
-    <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></div><div><p class="c-lbl">WhatsApp</p><p class="c-val"><a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dk)">Message us on WhatsApp ↗</a></p><p style="font-size:.78rem;color:var(--text-muted);margin-top:2px">For donations, questions, and receipts</p></div></div>
-    <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg></div><div><p class="c-lbl">Website</p><p class="c-val">moosatrustuk.org</p></div></div>
-    <div class="c-detail"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><p class="c-lbl">Mailing Address</p><p class="c-val">Moosa Trust UK<br>Daisy Street, Blackburn<br>BB1 5EW</p></div></div>
+    <div class="c-detail"><div class="c-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></div><div><p class="c-lbl">WhatsApp</p><p class="c-val"><a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dk)">Message us on WhatsApp ↗</a></p><p style="font-size:.78rem;color:var(--text-muted);margin-top:2px">For donations, questions, and receipts</p></div></div>
+    <div class="c-detail"><div class="c-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg></div><div><p class="c-lbl">Website</p><p class="c-val">moosatrustuk.org</p></div></div>
+    <div class="c-detail"><div class="c-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><p class="c-lbl">Mailing Address</p><p class="c-val">Moosa Trust UK<br>Daisy Street, Blackburn<br>BB1 5EW</p></div></div>
   </div>
   <div class="card c-form fade d1">
     <div id="form-body">
       <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:1.4rem;color:var(--forest)">Send a Message</h3>
       <div class="hp-field"><label for="fwebsite">Website</label><input type="text" id="fwebsite" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-      <div class="fg" id="fg-name"><label for="fname">Your Name</label><input type="text" id="fname" name="name" placeholder="e.g. Ahmed Ali" autocomplete="name" required><p class="field-error">Please enter your name.</p></div>
-      <div class="fg" id="fg-email"><label for="femail">Email Address</label><input type="email" id="femail" name="email" placeholder="your@email.com" autocomplete="email" required><p class="field-error">Please enter a valid email address.</p></div>
+      <div class="fg" id="fg-name"><label for="fname">Your Name</label><input type="text" id="fname" name="name" placeholder="e.g. Ahmed Ali" autocomplete="name" required aria-describedby="fname-error"><p class="field-error" id="fname-error" role="alert">Please enter your name.</p></div>
+      <div class="fg" id="fg-email"><label for="femail">Email Address</label><input type="email" id="femail" name="email" placeholder="your@email.com" autocomplete="email" required aria-describedby="femail-error"><p class="field-error" id="femail-error" role="alert">Please enter a valid email address.</p></div>
       <div class="fg"><label for="fsubject">Subject</label><select id="fsubject" name="subject"><option value="">Select a topic...</option><option>Donation Enquiry</option><option>Gift Aid</option><option>Project Information</option><option>In Memory Donation</option><option>Volunteering</option><option>Partnership</option><option>Other</option></select></div>
       <div class="fg"><label for="fmsg">Message</label><textarea id="fmsg" name="message" placeholder="How can we help you?"></textarea></div>
-      <button type="button" class="f-submit" id="submitBtn" onclick="submitForm()"><span class="btn-text">Send Message</span><span class="spinner"></span></button>
+      <button type="button" class="f-submit" id="submitBtn"><span class="btn-text">Send Message</span><span class="spinner"></span></button>
+      <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
     </div>
-    <div class="f-success" id="form-success"><div class="success-check"><svg><use href="#i-check"/></svg></div><h3>Message Received!</h3><p>JazakAllah Khayran. We'll get back to you as soon as possible, insha'Allah.</p><button type="button" class="btn-outline btn-sm" style="margin-top:1.2rem" onclick="resetForm()">Send Another Message</button></div>
+    <div class="f-success" id="form-success"><div class="success-check"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg></div><h3>Message Received!</h3><p>JazakAllah Khayran. We'll get back to you as soon as possible, insha'Allah.</p><button type="button" class="btn-outline btn-sm" id="resetBtn" style="margin-top:1.2rem">Send Another Message</button></div>
   </div>
 </div></div></section>
 
@@ -395,30 +412,112 @@
   <div class="footer-grid">
     <div class="footer-brand"><div class="logo"><img src="/Moosatrustlogo.png" alt="Moosa Trust UK" class="logo-img" width="38" height="38" decoding="async" style="border-radius:8px"><div class="logo-text">Moosa Trust <span>UK Charitable Trust</span></div></div><p>A small trust with a serious purpose. We relieve poverty, fund education, and deliver clean water, guided by faith, driven by accountability, and answerable to Allah above all.</p><p style="font-size:.8rem;color:rgba(255,255,255,.45);margin-top:1rem;line-height:1.6">Moosa Trust UK<br>Daisy Street, Blackburn<br>BB1 5EW</p><p class="footer-ar" lang="ar">في سبيل الله</p></div>
     <div class="footer-col"><h4>Navigate</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="/blog/why-we-created-moosa-trust/">Founder's Letter</a></li><li><a href="#causes">Our Causes</a></li><li><a href="/projects/sri-lanka-well/">Our First Project</a></li><li><a href="#donate">Donate</a></li><li><a href="#trustees">Trustees</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Give</h4><ul class="footer-links"><li><a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">Cash Donation (WhatsApp) ↗</a></li><li><a href="/collection-box">Request a Collection Box</a></li><li><a href="#faq">Gift Aid Info</a></li></ul><h4 style="margin-top:1.8rem">Contact</h4><ul class="footer-links"><li><a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></li><li><a href="#contact">Contact Form</a></li></ul></div>
+    <div class="footer-col"><h4>Give</h4><ul class="footer-links"><li><a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">Cash Donation (WhatsApp) ↗</a></li><li><a href="/collection-box/">Request a Collection Box</a></li><li><a href="#faq">Gift Aid Info</a></li></ul><h4 style="margin-top:1.8rem">Contact</h4><ul class="footer-links"><li><a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></li><li><a href="#contact">Contact Form</a></li></ul></div>
   </div>
-  <div class="footer-bot"><span>© <span id="yr"></span> Moosa Trust UK. All rights reserved. · <a href="/privacy/" style="color:rgba(255,255,255,.55);transition:color .2s">Privacy</a> · <a href="/sitemap/" style="color:rgba(255,255,255,.55);transition:color .2s">Sitemap</a></span><span>In the service of those who need it most.</span></div>
+  <div class="footer-bot"><span>© <span id="yr">2026</span> Moosa Trust UK. All rights reserved. · <a href="/privacy/" style="color:rgba(255,255,255,.55);transition:color .2s">Privacy</a> · <a href="/sitemap/" style="color:rgba(255,255,255,.55);transition:color .2s">Sitemap</a></span><span>In the service of those who need it most.</span></div>
 </div></footer>
 
 <div id="sticky-donate"><a href="https://wa.me/447854690073" target="_blank" rel="noopener noreferrer" class="btn-gold">Give Now via WhatsApp ↗</a></div>
 
 <script>
-const prog=document.getElementById('progress'),nav=document.getElementById('nav'),sticky=document.getElementById('sticky-donate'),donateSection=document.getElementById('donate');let ticking=false;
-function onScroll(){const s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(s/h*100)+'%';nav.classList.toggle('scrolled',s>60);const dr=donateSection.getBoundingClientRect();sticky.classList.toggle('show',s>600&&!(dr.top<window.innerHeight&&dr.bottom>0));ticking=false}
-window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
-const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const a=btn.nextElementSibling,o=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q').forEach(b=>b.setAttribute('aria-expanded','false'));document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));if(!o){btn.setAttribute('aria-expanded','true');a.classList.add('open')}})});
-const mob=document.getElementById('mobMenu'),menuBtn=document.getElementById('menuBtn');
-menuBtn.addEventListener('click',()=>{mob.classList.add('open');menuBtn.setAttribute('aria-expanded','true')});
-document.getElementById('mobClose').addEventListener('click',()=>{mob.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')});
-mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})})});
-function clearErrors(){document.querySelectorAll('.fg.has-error').forEach(f=>f.classList.remove('has-error'))}
-function resetForm(){document.getElementById('form-body').style.display='';document.getElementById('form-success').style.display='none';document.getElementById('fname').value='';document.getElementById('femail').value='';document.getElementById('fsubject').value='';document.getElementById('fmsg').value='';document.getElementById('fwebsite').value='';document.getElementById('submitBtn').disabled=false;document.getElementById('submitBtn').classList.remove('loading')}
-async function submitForm(){clearErrors();if(document.getElementById('fwebsite').value)return;const n=document.getElementById('fname').value.trim(),e=document.getElementById('femail').value.trim(),s=document.getElementById('fsubject').value,m=document.getElementById('fmsg').value.trim(),b=document.getElementById('submitBtn');let v=true;if(!n){document.getElementById('fg-name').classList.add('has-error');v=false}if(!e||!e.includes('@')){document.getElementById('fg-email').classList.add('has-error');v=false}if(!v)return;b.disabled=true;b.classList.add('loading');try{const r=await fetch('https://formspree.io/f/mnjbbpoj',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({name:n,email:e,subject:s,message:m,_subject:'New Message, Moosa Trust UK Website'})});if(r.ok){document.getElementById('form-body').style.display='none';document.getElementById('form-success').style.display='block'}else throw new Error}catch{b.disabled=false;b.classList.remove('loading');const p=document.createElement('p');p.style.cssText='color:#c53030;font-size:.82rem;margin-top:.8rem;text-align:center';p.textContent='Something went wrong, please try again or message us on WhatsApp.';b.parentNode.appendChild(p);setTimeout(()=>p.remove(),6000)}}
-document.querySelectorAll('#fg-name input,#fg-email input').forEach(i=>{i.addEventListener('input',()=>i.closest('.fg').classList.remove('has-error'))});
-document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  var prog=document.getElementById('progress'),nav=document.getElementById('nav'),sticky=document.getElementById('sticky-donate'),donateSection=document.getElementById('donate');
+  var ticking=false;
+  function onScroll(){var s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;if(prog)prog.style.width=(s/h*100)+'%';if(nav)nav.classList.toggle('scrolled',s>60);if(sticky&&donateSection){var dr=donateSection.getBoundingClientRect();sticky.classList.toggle('show',s>600&&!(dr.top<window.innerHeight&&dr.bottom>0))}ticking=false}
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.fade').forEach(function(el){io.observe(el)});
+
+  // FAQ accordion (only one open at a time).
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var panel=btn.nextElementSibling,wasOpen=btn.getAttribute('aria-expanded')==='true';
+      document.querySelectorAll('.faq-q').forEach(function(b){b.setAttribute('aria-expanded','false')});
+      document.querySelectorAll('.faq-a').forEach(function(p){p.classList.remove('open')});
+      if(!wasOpen){btn.setAttribute('aria-expanded','true');panel.classList.add('open')}
+    });
+  });
+
+  // Mobile menu, with focus trap and Esc-to-close.
+  var mob=document.getElementById('mobMenu'),menuBtn=document.getElementById('menuBtn'),mobClose=document.getElementById('mobClose');
+  function focusables(){return mob?mob.querySelectorAll('a[href],button:not([disabled])'):[]}
+  function openMenu(){if(!mob)return;mob.classList.add('open');mob.setAttribute('aria-modal','true');menuBtn.setAttribute('aria-expanded','true');var f=focusables();if(f.length)f[0].focus()}
+  function closeMenu(){if(!mob)return;mob.classList.remove('open');mob.setAttribute('aria-modal','false');menuBtn.setAttribute('aria-expanded','false');menuBtn.focus()}
+  if(menuBtn)menuBtn.addEventListener('click',openMenu);
+  if(mobClose)mobClose.addEventListener('click',closeMenu);
+  if(mob)mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){
+    if(!mob||!mob.classList.contains('open'))return;
+    if(e.key==='Escape'){e.preventDefault();closeMenu();return}
+    if(e.key!=='Tab')return;
+    var f=focusables();if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  });
+
+  // Smooth scroll for in-page anchors.
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var href=a.getAttribute('href');
+      if(href.length<2)return;
+      var t=document.querySelector(href);
+      if(!t)return;
+      e.preventDefault();
+      t.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  // Contact form.
+  var fname=document.getElementById('fname'),femail=document.getElementById('femail'),fsubject=document.getElementById('fsubject'),fmsg=document.getElementById('fmsg'),fwebsite=document.getElementById('fwebsite'),submitBtn=document.getElementById('submitBtn'),resetBtn=document.getElementById('resetBtn'),formBody=document.getElementById('form-body'),formSuccess=document.getElementById('form-success'),formStatus=document.getElementById('form-status');
+  function setError(fgId,inputEl,hasError){
+    var fg=document.getElementById(fgId);
+    if(!fg)return;
+    fg.classList.toggle('has-error',hasError);
+    if(inputEl)inputEl.setAttribute('aria-invalid',hasError?'true':'false');
+  }
+  function clearErrors(){
+    [['fg-name',fname],['fg-email',femail]].forEach(function(p){setError(p[0],p[1],false)});
+    if(formStatus)formStatus.textContent='';
+  }
+  function resetForm(){
+    if(formBody)formBody.style.display='';
+    if(formSuccess)formSuccess.style.display='none';
+    [fname,femail,fsubject,fmsg,fwebsite].forEach(function(el){if(el)el.value=''});
+    if(submitBtn){submitBtn.disabled=false;submitBtn.classList.remove('loading')}
+    clearErrors();
+  }
+  async function submitForm(){
+    clearErrors();
+    if(fwebsite&&fwebsite.value)return;
+    var n=fname.value.trim(),e=femail.value.trim(),s=fsubject.value,m=fmsg.value.trim();
+    var valid=true;
+    if(!n){setError('fg-name',fname,true);valid=false}
+    if(!e||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){setError('fg-email',femail,true);valid=false}
+    if(!valid)return;
+    submitBtn.disabled=true;submitBtn.classList.add('loading');
+    try{
+      var r=await fetch('https://formspree.io/f/mnjbbpoj',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({name:n,email:e,subject:s,message:m,_subject:'New Message, Moosa Trust UK Website'})});
+      if(!r.ok)throw new Error();
+      formBody.style.display='none';formSuccess.style.display='block';
+    }catch(err){
+      submitBtn.disabled=false;submitBtn.classList.remove('loading');
+      if(formStatus)formStatus.textContent='Something went wrong, please try again or message us on WhatsApp.';
+    }
+  }
+  if(submitBtn)submitBtn.addEventListener('click',submitForm);
+  if(resetBtn)resetBtn.addEventListener('click',resetForm);
+  document.querySelectorAll('#fg-name input,#fg-email input').forEach(function(i){
+    i.addEventListener('input',function(){
+      i.closest('.fg').classList.remove('has-error');
+      i.setAttribute('aria-invalid','false');
+      if(formStatus)formStatus.textContent='';
+    });
+  });
+
+  var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();
+})();
 </script>
 
 </body>
