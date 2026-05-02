@@ -7,10 +7,10 @@
   <meta name="description" content="Request a Moosa Trust UK collection box for your home, workplace or community. A trustee will be in touch to arrange delivery."/>
   <meta property="og:title" content="Request a Collection Box | Moosa Trust UK"/>
   <meta property="og:description" content="Place a Moosa Trust collection box in your home, workplace, or community space, and turn everyday generosity into real change."/>
-  <meta property="og:url" content="https://moosatrustuk.org/collection-box"/>
+  <meta property="og:url" content="https://moosatrustuk.org/collection-box/"/>
   <meta property="og:image" content="https://moosatrustuk.org/og/collection-box.jpg"/>
   <meta property="og:type" content="website"/>
-  <link rel="canonical" href="https://moosatrustuk.org/collection-box"/>
+  <link rel="canonical" href="https://moosatrustuk.org/collection-box/"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   <style>
     :root{--cream:#FAF8F3;--stone:#F3F1EA;--forest:#1B4332;--forest-md:#2d6a4f;--mint:#52b788;--gold:#c9943a;--gold-dk:#a07828;--gold-lt:#e8b86d;--text:#1B4332;--text-md:#3d5c4a;--text-lt:#5c6b5e;--text-muted:#7a8a7e;--gborder:rgba(27,67,50,.1)}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
     a{color:inherit;text-decoration:none}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}}
     nav{position:relative;z-index:10;padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gborder);background:white}
@@ -64,6 +64,7 @@
     .fg textarea{min-height:90px;resize:vertical}.fg select option{background:white;color:var(--text)}
     .fg .field-error{display:none;font-size:.78rem;color:#c53030;margin-top:.35rem}
     .fg.has-error input,.fg.has-error textarea,.fg.has-error select{border-color:#c53030}.fg.has-error .field-error{display:block}
+    .form-status{min-height:1em;margin-top:.8rem;text-align:center;font-size:.82rem;color:#c53030}.form-status:empty{display:none}
     .notice{background:rgba(27,67,50,.04);border:1px solid var(--gborder);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.4rem;font-size:.84rem;color:var(--text-lt);line-height:1.65;display:flex;gap:.7rem;align-items:flex-start}
     .notice svg{width:18px;height:18px;flex-shrink:0;color:var(--gold-dk);margin-top:1px}.notice strong{color:var(--gold-dk)}
     .privacy-note{background:rgba(201,148,58,.04);border:1px solid rgba(201,148,58,.15);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.4rem;font-size:.78rem;color:var(--text-muted);line-height:1.65}
@@ -87,10 +88,12 @@
     footer a{color:var(--text-lt);transition:color .2s}footer a:hover{color:var(--forest)}
     .footer-links-inline{display:flex;gap:1.2rem;align-items:center}
     @media(max-width:580px){.form-row{grid-template-columns:1fr}.how-it-works{flex-direction:column}.hw-step{border-right:none;border-bottom:1px solid var(--gborder);flex-direction:row;text-align:left;gap:.9rem}.hw-step:last-child{border-bottom:none}main{padding:2.5rem 1rem 4rem}.form-card{padding:1.5rem}footer{flex-direction:column;text-align:center}}
+      .skip-link{position:absolute;top:-100%;left:1rem;background:var(--gold);color:white;padding:.6rem 1.2rem;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;z-index:10000;transition:top .2s}.skip-link:focus{top:0}
   </style>
 </head>
 <body>
-<noscript><div style="background:#c53030;color:white;text-align:center;padding:1rem;font-size:.9rem">This website requires JavaScript to function.</div></noscript>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<noscript><div style="background:#1B4332;color:#FAF8F3;text-align:center;padding:.7rem 1rem;font-size:.85rem;line-height:1.5">JavaScript is disabled. You can still read every page; the mobile menu and any forms on this page need JavaScript to work.</div></noscript>
 <nav>
   <a href="/" class="logo"><img src="/Moosatrustlogo.png" alt="Moosa Trust UK" class="logo-img" width="36" height="36"><div class="logo-text">Moosa Trust <span>UK Charitable Trust</span></div></a>
   <ul class="nav-links">
@@ -116,7 +119,7 @@
   <a href="/#contact">Contact</a>
   <a href="/#donate" style="color:var(--gold)">Donate</a>
 </div>
-<main><div class="page-wrap">
+<main id="main-content"><div class="page-wrap">
   <div class="page-hdr"><span class="label">Community Giving</span><h1 class="page-title">Request a<br><em>Collection Box</em></h1><p class="page-sub">Place a Moosa Trust collection box in your home, workplace, or community space, and turn everyday generosity into real change. Fill in the form below and a trustee will be in touch to arrange delivery.</p></div>
   <div class="how-it-works">
     <div class="hw-step"><div class="hw-num">1</div><p class="hw-label">Fill in this form with your details</p></div>
@@ -127,36 +130,37 @@
   <div class="form-card">
     <div id="form-body">
       <h2>Your Details</h2>
-      <div class="notice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><div>Once submitted, a trustee will call you within <strong>2–3 days</strong> to confirm your address and arrange a convenient time for drop-off. All collection boxes are logged in our donations register.</div></div>
+      <div class="notice"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><div>Once submitted, a trustee will call you within <strong>2–3 days</strong> to confirm your address and arrange a convenient time for drop-off. All collection boxes are logged in our donations register.</div></div>
       <div class="hp-field"><label for="company">Company</label><input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off"></div>
       <div class="form-row">
-        <div class="fg" id="fg-fname"><label for="fname">First Name *</label><input type="text" id="fname" name="first_name" placeholder="e.g. Ahmed" autocomplete="given-name" required><p class="field-error">Please enter your first name.</p></div>
-        <div class="fg" id="fg-lname"><label for="lname">Last Name *</label><input type="text" id="lname" name="last_name" placeholder="e.g. Ali" autocomplete="family-name" required><p class="field-error">Please enter your last name.</p></div>
+        <div class="fg" id="fg-fname"><label for="fname">First Name *</label><input type="text" id="fname" name="first_name" placeholder="e.g. Ahmed" autocomplete="given-name" required aria-describedby="fname-error"><p class="field-error" id="fname-error" role="alert">Please enter your first name.</p></div>
+        <div class="fg" id="fg-lname"><label for="lname">Last Name *</label><input type="text" id="lname" name="last_name" placeholder="e.g. Ali" autocomplete="family-name" required aria-describedby="lname-error"><p class="field-error" id="lname-error" role="alert">Please enter your last name.</p></div>
       </div>
-      <div class="fg" id="fg-phone"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" autocomplete="tel" required><p class="field-error">Please enter your phone number.</p></div>
-      <div class="fg"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="your@email.com (optional)" autocomplete="email"></div>
-      <div class="fg" id="fg-address"><label for="address">Address *</label><input type="text" id="address" name="address_line1" placeholder="House number and street" autocomplete="address-line1" required><p class="field-error">Please enter your address.</p></div>
+      <div class="fg" id="fg-phone"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" autocomplete="tel" required aria-describedby="phone-error"><p class="field-error" id="phone-error" role="alert">Please enter your phone number.</p></div>
+      <div class="fg" id="fg-email"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="your@email.com (optional)" autocomplete="email" aria-describedby="email-error"><p class="field-error" id="email-error" role="alert">Please enter a valid email address, or leave it blank.</p></div>
+      <div class="fg" id="fg-address"><label for="address">Address *</label><input type="text" id="address" name="address_line1" placeholder="House number and street" autocomplete="address-line1" required aria-describedby="address-error"><p class="field-error" id="address-error" role="alert">Please enter your address.</p></div>
       <div class="form-row">
-        <div class="fg" id="fg-city"><label for="city">Town / City *</label><input type="text" id="city" name="city" placeholder="e.g. Birmingham" autocomplete="address-level2" required><p class="field-error">Please enter your town or city.</p></div>
-        <div class="fg" id="fg-postcode"><label for="postcode">Postcode *</label><input type="text" id="postcode" name="postcode" placeholder="e.g. B1 1AA" autocomplete="postal-code" required><p class="field-error">Please enter your postcode.</p></div>
+        <div class="fg" id="fg-city"><label for="city">Town / City *</label><input type="text" id="city" name="city" placeholder="e.g. Birmingham" autocomplete="address-level2" required aria-describedby="city-error"><p class="field-error" id="city-error" role="alert">Please enter your town or city.</p></div>
+        <div class="fg" id="fg-postcode"><label for="postcode">Postcode *</label><input type="text" id="postcode" name="postcode" placeholder="e.g. B1 1AA" autocomplete="postal-code" required aria-describedby="postcode-error"><p class="field-error" id="postcode-error" role="alert">Please enter your postcode.</p></div>
       </div>
       <div class="fg"><label for="location_type">Where will the box be placed?</label><select id="location_type" name="location_type"><option value="">Select an option...</option><option>My home</option><option>My workplace</option><option>A community space / masjid</option><option>A shop or business</option><option>Other</option></select></div>
       <div class="fg"><label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" placeholder="e.g. best time to call, access instructions, etc."></textarea></div>
-      <div class="privacy-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><strong>Your privacy:</strong> Your details are only used to arrange collection box delivery and are stored securely by the trustees. We will never share your personal information with third parties.</div>
-      <button type="button" class="f-submit" id="submitBtn" onclick="submitForm()"><span class="btn-text">Request My Collection Box</span><span class="spinner"></span></button>
+      <div class="privacy-note"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><strong>Your privacy:</strong> Your details are only used to arrange collection box delivery and are stored securely by the trustees. We will never share your personal information with third parties.</div>
+      <button type="button" class="f-submit" id="submitBtn"><span class="btn-text">Request My Collection Box</span><span class="spinner"></span></button>
+      <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
     </div>
     <div class="success" id="success-state">
-      <div class="success-check"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>
+      <div class="success-check"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>
       <h2>Request Received!</h2>
       <p>JazakAllah Khayran. A trustee will call you within 2–3 days to arrange your collection box drop-off. Every coin you collect will reach someone who truly needs it.</p>
       <p>May Allah accept it from you as a Sadaqah Jariyah.</p>
       <p class="arabic" lang="ar">بارك الله فيك</p>
-      <button type="button" class="btn-outline-sm" onclick="resetForm()">Submit Another Request</button>
+      <button type="button" class="btn-outline-sm" id="resetBtn">Submit Another Request</button>
     </div>
   </div>
 </div></main>
 <footer>
-  <span>© <span id="yr"></span> Moosa Trust UK</span>
+  <span>© <span id="yr">2026</span> Moosa Trust UK</span>
   <div class="footer-links-inline">
     <a href="/sitemap/">Sitemap</a>
     <a href="/privacy/">Privacy</a>
@@ -165,11 +169,105 @@
   </div>
 </footer>
 <script>
-document.getElementById('yr').textContent=new Date().getFullYear();const mob=document.getElementById('mobMenu'),menuBtn=document.getElementById('menuBtn');if(menuBtn&&mob){menuBtn.addEventListener('click',()=>{mob.classList.add('open');menuBtn.setAttribute('aria-expanded','true')});document.getElementById('mobClose').addEventListener('click',()=>{mob.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')});mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}))}
-function clearErrors(){document.querySelectorAll('.fg.has-error').forEach(f=>f.classList.remove('has-error'))}
-function resetForm(){document.getElementById('form-body').style.display='';document.getElementById('success-state').style.display='none';['fname','lname','phone','email','address','city','postcode','notes'].forEach(id=>document.getElementById(id).value='');document.getElementById('location_type').value='';document.getElementById('company').value='';document.getElementById('submitBtn').disabled=false;document.getElementById('submitBtn').classList.remove('loading')}
-async function submitForm(){clearErrors();const btn=document.getElementById('submitBtn');if(document.getElementById('company').value)return;const required=[{id:'fname',fg:'fg-fname'},{id:'lname',fg:'fg-lname'},{id:'phone',fg:'fg-phone'},{id:'address',fg:'fg-address'},{id:'city',fg:'fg-city'},{id:'postcode',fg:'fg-postcode'}];let valid=true;for(const{id,fg}of required){if(!document.getElementById(id).value.trim()){document.getElementById(fg).classList.add('has-error');if(valid)document.getElementById(id).focus();valid=false}}if(!valid)return;btn.disabled=true;btn.classList.add('loading');const data={first_name:document.getElementById('fname').value.trim(),last_name:document.getElementById('lname').value.trim(),phone:document.getElementById('phone').value.trim(),email:document.getElementById('email').value.trim(),address:document.getElementById('address').value.trim(),city:document.getElementById('city').value.trim(),postcode:document.getElementById('postcode').value.trim(),location_type:document.getElementById('location_type').value,notes:document.getElementById('notes').value.trim(),_subject:'New Collection Box Request, Moosa Trust UK'};try{const res=await fetch('https://formspree.io/f/mnjbbpoj',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});if(res.ok){document.getElementById('form-body').style.display='none';document.getElementById('success-state').style.display='block'}else throw new Error}catch{btn.disabled=false;btn.classList.remove('loading');const p=document.createElement('p');p.style.cssText='color:#c53030;font-size:.82rem;margin-top:.8rem;text-align:center';p.textContent='Something went wrong, please try again or message us on WhatsApp.';btn.parentNode.appendChild(p);setTimeout(()=>p.remove(),6000)}}
-document.querySelectorAll('.fg input,.fg textarea,.fg select').forEach(inp=>{inp.addEventListener('input',()=>{const fg=inp.closest('.fg');if(fg)fg.classList.remove('has-error')})});
+(function(){
+  var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();
+
+  // Mobile menu, with focus trap and Esc-to-close.
+  var mob=document.getElementById('mobMenu'),menuBtn=document.getElementById('menuBtn'),mobClose=document.getElementById('mobClose');
+  if(menuBtn&&mob){
+    function focusables(){return mob.querySelectorAll('a[href],button:not([disabled])')}
+    function openMenu(){mob.classList.add('open');mob.setAttribute('aria-modal','true');menuBtn.setAttribute('aria-expanded','true');var f=focusables();if(f.length)f[0].focus()}
+    function closeMenu(){mob.classList.remove('open');mob.setAttribute('aria-modal','false');menuBtn.setAttribute('aria-expanded','false');menuBtn.focus()}
+    menuBtn.addEventListener('click',openMenu);
+    if(mobClose)mobClose.addEventListener('click',closeMenu);
+    mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+    document.addEventListener('keydown',function(e){
+      if(!mob.classList.contains('open'))return;
+      if(e.key==='Escape'){e.preventDefault();closeMenu();return}
+      if(e.key!=='Tab')return;
+      var f=focusables();if(!f.length)return;
+      var first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    });
+  }
+
+  // Form.
+  var formStatus=document.getElementById('form-status');
+  var submitBtn=document.getElementById('submitBtn'),resetBtn=document.getElementById('resetBtn');
+  var formBody=document.getElementById('form-body'),successState=document.getElementById('success-state');
+  var EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function getById(id){return document.getElementById(id)}
+  function setError(fgId,inputId,hasError){
+    var fg=getById(fgId),inp=getById(inputId);
+    if(fg)fg.classList.toggle('has-error',hasError);
+    if(inp)inp.setAttribute('aria-invalid',hasError?'true':'false');
+  }
+  function clearErrors(){
+    document.querySelectorAll('.fg.has-error').forEach(function(f){f.classList.remove('has-error')});
+    document.querySelectorAll('[aria-invalid="true"]').forEach(function(i){i.setAttribute('aria-invalid','false')});
+    if(formStatus)formStatus.textContent='';
+  }
+  function resetForm(){
+    formBody.style.display='';successState.style.display='none';
+    ['fname','lname','phone','email','address','city','postcode','notes'].forEach(function(id){var el=getById(id);if(el)el.value=''});
+    var lt=getById('location_type');if(lt)lt.value='';
+    var hp=getById('company');if(hp)hp.value='';
+    submitBtn.disabled=false;submitBtn.classList.remove('loading');
+    clearErrors();
+  }
+  async function submitForm(){
+    clearErrors();
+    if(getById('company').value)return; // honeypot
+    var required=[{id:'fname',fg:'fg-fname'},{id:'lname',fg:'fg-lname'},{id:'phone',fg:'fg-phone'},{id:'address',fg:'fg-address'},{id:'city',fg:'fg-city'},{id:'postcode',fg:'fg-postcode'}];
+    var valid=true,firstBad=null;
+    required.forEach(function(r){
+      if(!getById(r.id).value.trim()){
+        setError(r.fg,r.id,true);
+        if(!firstBad)firstBad=r.id;
+        valid=false;
+      }
+    });
+    var emailVal=getById('email').value.trim();
+    if(emailVal&&!EMAIL_RE.test(emailVal)){
+      setError('fg-email','email',true);
+      if(!firstBad)firstBad='email';
+      valid=false;
+    }
+    if(!valid){if(firstBad)getById(firstBad).focus();return}
+    submitBtn.disabled=true;submitBtn.classList.add('loading');
+    var data={
+      first_name:getById('fname').value.trim(),
+      last_name:getById('lname').value.trim(),
+      phone:getById('phone').value.trim(),
+      email:emailVal,
+      address:getById('address').value.trim(),
+      city:getById('city').value.trim(),
+      postcode:getById('postcode').value.trim(),
+      location_type:getById('location_type').value,
+      notes:getById('notes').value.trim(),
+      _subject:'New Collection Box Request, Moosa Trust UK'
+    };
+    try{
+      var res=await fetch('https://formspree.io/f/mnjbbpoj',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});
+      if(!res.ok)throw new Error();
+      formBody.style.display='none';successState.style.display='block';
+    }catch(err){
+      submitBtn.disabled=false;submitBtn.classList.remove('loading');
+      if(formStatus)formStatus.textContent='Something went wrong, please try again or message us on WhatsApp.';
+    }
+  }
+  if(submitBtn)submitBtn.addEventListener('click',submitForm);
+  if(resetBtn)resetBtn.addEventListener('click',resetForm);
+  document.querySelectorAll('.fg input,.fg textarea,.fg select').forEach(function(inp){
+    inp.addEventListener('input',function(){
+      var fg=inp.closest('.fg');if(fg)fg.classList.remove('has-error');
+      inp.setAttribute('aria-invalid','false');
+      if(formStatus)formStatus.textContent='';
+    });
+  });
+})();
 </script>
 </body>
 </html>
