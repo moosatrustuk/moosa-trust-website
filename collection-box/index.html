@@ -25,7 +25,25 @@
     .logo{display:flex;align-items:center;gap:.7rem;color:var(--forest)}.logo-img{width:36px;height:36px;border-radius:8px;object-fit:contain}
     .logo-text{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;line-height:1.2}
     .logo-text span{display:block;font-size:.6rem;font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dk)}
-    .nav-back{font-size:.82rem;color:var(--text-lt);display:flex;align-items:center;gap:.4rem;transition:color .2s}.nav-back:hover{color:var(--forest)}.nav-back svg{width:16px;height:16px;flex-shrink:0}
+    .nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
+    .nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-lt);position:relative;transition:color .2s}
+    .nav-links a:hover{color:var(--forest)}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s}
+    .nav-links a:hover::after{width:100%}
+    .nav-cta{background:var(--gold);color:white!important;padding:.45rem 1.2rem;border-radius:999px;font-weight:700!important;transition:background .2s,transform .2s!important}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--gold-dk)!important;transform:translateY(-1px);color:white!important}
+    .menu-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .menu-btn span{display:block;width:22px;height:2px;border-radius:2px;background:var(--forest)}
+    .mob-menu{position:fixed;inset:0;background:rgba(250,248,243,.98);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease}
+    .mob-menu.open{opacity:1;visibility:visible}
+    .mob-menu a{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--forest);transition:all .35s ease;transform:translateY(12px);opacity:0}
+    .mob-menu.open a{transform:translateY(0);opacity:1}
+    .mob-menu.open a:nth-child(2){transition-delay:.05s}.mob-menu.open a:nth-child(3){transition-delay:.1s}.mob-menu.open a:nth-child(4){transition-delay:.15s}.mob-menu.open a:nth-child(5){transition-delay:.2s}.mob-menu.open a:nth-child(6){transition-delay:.25s}.mob-menu.open a:nth-child(7){transition-delay:.3s}.mob-menu.open a:nth-child(8){transition-delay:.35s}
+    .mob-menu a:hover{color:var(--gold)}
+    .mob-close{position:absolute;top:1.6rem;right:1.6rem;background:none;border:none;font-size:1.5rem;color:var(--forest);cursor:pointer;opacity:.7;transition:opacity .2s}
+    .mob-close:hover{opacity:1}
+    @media(max-width:860px){.nav-links{display:none}.menu-btn{display:flex}}
     main{position:relative;z-index:1;flex:1;display:flex;align-items:flex-start;justify-content:center;padding:4rem 1.5rem 5rem}.page-wrap{width:100%;max-width:680px}
     .page-hdr{text-align:center;margin-bottom:3rem}
     .label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-dk);font-weight:600;display:block;margin-bottom:.9rem}
@@ -75,8 +93,29 @@
 <noscript><div style="background:#c53030;color:white;text-align:center;padding:1rem;font-size:.9rem">This website requires JavaScript to function.</div></noscript>
 <nav>
   <a href="/" class="logo"><img src="/Moosatrustlogo.png" alt="Moosa Trust UK" class="logo-img" width="36" height="36"><div class="logo-text">Moosa Trust <span>UK Charitable Trust</span></div></a>
-  <a href="/" class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to main site</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#causes">Causes</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/#trustees">Trustees</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/#donate" class="nav-cta">Donate</a></li>
+  </ul>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation menu">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+  <a href="/#about">About</a>
+  <a href="/#causes">Causes</a>
+  <a href="/projects/">Projects</a>
+  <a href="/blog/">Blog</a>
+  <a href="/#trustees">Trustees</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/#contact">Contact</a>
+  <a href="/#donate" style="color:var(--gold)">Donate</a>
+</div>
 <main><div class="page-wrap">
   <div class="page-hdr"><span class="label">Community Giving</span><h1 class="page-title">Request a<br><em>Collection Box</em></h1><p class="page-sub">Place a Moosa Trust collection box in your home, workplace, or community space — and turn everyday generosity into real change. Fill in the form below and a trustee will be in touch to arrange delivery.</p></div>
   <div class="how-it-works">
@@ -126,7 +165,7 @@
   </div>
 </footer>
 <script>
-document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('yr').textContent=new Date().getFullYear();const mob=document.getElementById('mobMenu'),menuBtn=document.getElementById('menuBtn');if(menuBtn&&mob){menuBtn.addEventListener('click',()=>{mob.classList.add('open');menuBtn.setAttribute('aria-expanded','true')});document.getElementById('mobClose').addEventListener('click',()=>{mob.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')});mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}))}
 function clearErrors(){document.querySelectorAll('.fg.has-error').forEach(f=>f.classList.remove('has-error'))}
 function resetForm(){document.getElementById('form-body').style.display='';document.getElementById('success-state').style.display='none';['fname','lname','phone','email','address','city','postcode','notes'].forEach(id=>document.getElementById(id).value='');document.getElementById('location_type').value='';document.getElementById('company').value='';document.getElementById('submitBtn').disabled=false;document.getElementById('submitBtn').classList.remove('loading')}
 async function submitForm(){clearErrors();const btn=document.getElementById('submitBtn');if(document.getElementById('company').value)return;const required=[{id:'fname',fg:'fg-fname'},{id:'lname',fg:'fg-lname'},{id:'phone',fg:'fg-phone'},{id:'address',fg:'fg-address'},{id:'city',fg:'fg-city'},{id:'postcode',fg:'fg-postcode'}];let valid=true;for(const{id,fg}of required){if(!document.getElementById(id).value.trim()){document.getElementById(fg).classList.add('has-error');if(valid)document.getElementById(id).focus();valid=false}}if(!valid)return;btn.disabled=true;btn.classList.add('loading');const data={first_name:document.getElementById('fname').value.trim(),last_name:document.getElementById('lname').value.trim(),phone:document.getElementById('phone').value.trim(),email:document.getElementById('email').value.trim(),address:document.getElementById('address').value.trim(),city:document.getElementById('city').value.trim(),postcode:document.getElementById('postcode').value.trim(),location_type:document.getElementById('location_type').value,notes:document.getElementById('notes').value.trim(),_subject:'New Collection Box Request — Moosa Trust UK'};try{const res=await fetch('https://formspree.io/f/mnjbbpoj',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});if(res.ok){document.getElementById('form-body').style.display='none';document.getElementById('success-state').style.display='block'}else throw new Error}catch{btn.disabled=false;btn.classList.remove('loading');const p=document.createElement('p');p.style.cssText='color:#c53030;font-size:.82rem;margin-top:.8rem;text-align:center';p.textContent='Something went wrong — please try again or message us on WhatsApp.';btn.parentNode.appendChild(p);setTimeout(()=>p.remove(),6000)}}
