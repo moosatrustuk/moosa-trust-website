@@ -5,7 +5,7 @@ shown when the page is shared on WhatsApp, iMessage, Twitter, LinkedIn, etc.
 
 ## Why SVG isn't enough
 
-This folder contains SVG templates (`*.svg`) at 1200x630 — the standard OG
+This folder contains SVG templates (`*.svg`) at 1200x630, the standard OG
 ratio. **Most messaging apps (WhatsApp, iMessage, Slack) do not render SVG OG
 images.** They expect raster JPG or PNG. The SVGs here are design templates;
 you (or a designer) need to export each one to a JPG with the same basename,
@@ -44,7 +44,7 @@ done
 
 ## What to commit
 
-Once converted, commit the JPGs (not the SVGs — though keeping SVGs around
+Once converted, commit the JPGs (not the SVGs, though keeping SVGs around
 makes future edits easy):
 
 ```bash
@@ -56,7 +56,7 @@ git push origin main
 ## Until then
 
 Without the JPGs, social-media link previews will fall back to whatever the
-shared platform decides — typically the global logo. The page still works
+shared platform decides, typically the global logo. The page still works
 fine; only the preview card is degraded.
 
 ## Files
